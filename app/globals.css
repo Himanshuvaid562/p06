@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; max-width: 760px; margin: 30px auto; padding: 0 16px; background: #f5f6fa; color: #222; }
+a { color: #3b5bdb; }
+input, select, textarea, button { display: block; width: 100%; padding: 8px; margin: 6px 0 12px; font-size: 14px; box-sizing: border-box; }
+button { background: #3b5bdb; color: white; border: none; border-radius: 4px; cursor: pointer; }
+.card { background: white; padding: 14px; border-radius: 6px; margin-bottom: 12px; border: 1px solid #ddd; }
+.tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #e7ecff; margin-right: 6px; }
+.high { background: #ffe0e0; }
