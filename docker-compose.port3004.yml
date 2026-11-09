@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3004:3000"
+    environment:
+      - AUTH_SECRET=${AUTH_SECRET:-change-this-secret}   # used to sign login cookies
+      - COOKIE_SECURE=${COOKIE_SECURE:-false}            # set true when served over https
+      # Ollama running on the host machine (for meaning-based matching)
+      - EMBED_URL=${EMBED_URL:-http://host.docker.internal:11434}
+      - EMBED_MODEL=${EMBED_MODEL:-nomic-embed-text}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # lets the container reach the host on Linux
+    volumes:
+      - p09-data:/app/data   # keeps queries, sessions and users after restart
+    restart: unless-stopped
+
+volumes:
+  p09-data:
